@@ -1,0 +1,7 @@
+- name: ping the server 
+  hosts: frontend #which server we are connecting to servers can be given directly or kept in inventory file here we are taking from inventory file.
+  #list of tasks/collections/modules
+  tasks:
+  - name: ping
+    ansible.builtin.ping:
+  
