@@ -1,0 +1,22 @@
+- name: Datatypes in Ansible
+  hosts: localhost
+  connection: local
+  vars:
+    Course: "Devops with AWS" #string
+    Duration: 120 #number
+    is_live: true #boolean
+    #list
+    tools: #["linux", "AWS", "Ansible"] here we can give it any way this is called as list
+    - linux
+    - AWS
+    - Ansible
+    concepts: #this is called as DICTNOARY/MAPS/OBJECTS
+      cloud: AWS
+      cm: Ansible # it will be in key value pair format
+
+  tasks:
+  - name: print course info
+    ansible.builtin.debug:
+      msg: " course name: {{ Course}}, duration is: {{ Duration }}, is_live?: {{ is_live }}, tools are: {{ tools }}, concepts are: {{ concepts }}"
+
+
