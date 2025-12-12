@@ -33,3 +33,18 @@
 #       ansible.builtin.package:
 #         name: zip
 #         state: latest
+
+
+# 2. state (string)
+
+# Defines what action should be taken on the package.
+
+# Available values:
+
+# State	Meaning
+# present	Install package (if not installed already)
+# absent	Remove package
+# latest	Install or upgrade to latest version
+# installed	Same as present
+# removed	Same as absent
+# downgrade	Downgrade package (backend must support)
