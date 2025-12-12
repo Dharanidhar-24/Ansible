@@ -1,0 +1,11 @@
+- name: Assigning variables
+  hosts: localhost
+  connection: local #Ansible is trying to connect local host
+  vars:
+    course: Ansible
+    duration: 5hrs
+    trainer: Dharanidhar
+  tasks:
+  - name: print the course info
+    ansible.builtin.debug:
+      msg: "Course: {{ course }}, Duration: {{ duration }}, Trainer is: {{ trainer }}"  
