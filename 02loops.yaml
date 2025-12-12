@@ -11,3 +11,25 @@
     - { name: "nginx", state: "absent"}
     - { name: "mysql", state: "latest"}
     - { name: "zip", state: "absent"}
+
+
+
+# without loops
+
+# - name: Install packages without loops
+#   hosts: localhost
+#   connection: local
+#   become: yes
+
+#   tasks:
+#     - name: remove nginx and mysql
+#       ansible.builtin.package:
+#         name:
+#           - nginx
+#           - mysql
+#         state: absent
+
+#     - name: install zip
+#       ansible.builtin.package:
+#         name: zip
+#         state: latest
