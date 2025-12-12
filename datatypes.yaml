@@ -20,3 +20,21 @@
       msg: " course name: {{ Course}}, duration is: {{ Duration }}, is_live?: {{ is_live }}, tools are: {{ tools }}, concepts are: {{ concepts }}"
 
 
+# [ ec2-user@ip-172-31-74-129 ~/Ansible ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 datatypes.yaml
+# [WARNING]: Found both group and host with same name: localhost
+
+# PLAY [Datatypes in Ansible] *********************************************************************************************
+
+# TASK [Gathering Facts] **************************************************************************************************
+# ok: [localhost]
+
+# TASK [print course info] ************************************************************************************************
+# ok: [localhost] => {
+#     "msg": " course name: Devops with AWS, duration is: 120, is_live?: True, tools are: ['linux', 'AWS', 'Ansible'], concepts are: {'cloud': 'AWS', 'cm': 'Ansible'}"
+# }
+
+# PLAY RECAP **************************************************************************************************************
+# localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+#In output lists [] 
+# Maps {}
