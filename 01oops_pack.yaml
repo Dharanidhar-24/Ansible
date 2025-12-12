@@ -10,4 +10,5 @@
           - nginx
           - mysql-server
           - zip
+          - python
         state: latest
