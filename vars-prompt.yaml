@@ -1,6 +1,6 @@
 - name: variables from prompt
   hosts: localhost
-  connections: local
+  connection: local
   vars_prompt:
   - name: username #this username will act as the variable here what ever given input will store in it.
     prompt: Enter the username?
