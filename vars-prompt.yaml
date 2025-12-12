@@ -6,7 +6,7 @@
     prompt: Enter the username?
     private: false #This means what ever we enter it will display
   - name: password
-    promt: Enter the password;
+    prompt: Enter the password;
     private: true #It will hide what ever we enter.
   tasks:
   - name: print credentials
