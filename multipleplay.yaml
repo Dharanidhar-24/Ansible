@@ -1,0 +1,23 @@
+- name: play-01
+  hosts: localhost
+  tasks:
+  - name: play1 and task1
+    ansible.builtin.debug: #this is used to echo any message
+      msg: "Hello from play1 and task1"
+
+  - name: play1 and task2
+    ansible.builtin.debug:
+      msg: "Hello from play1 and task2"
+
+- name: play-02
+  hosts: localhost
+  tasks:
+  - name: play2 and task2
+    ansible.builtin.debug:
+      msg: "Hello from play2 and task1"
+
+  - name: play2 and task2
+    ansible.builtin.debug:
+      msg: "Hello from play2 and task2"
+
+      #playbook is the list of plays. Play is nothing but list of tasks executed in the remote server.
