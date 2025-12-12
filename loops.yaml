@@ -5,7 +5,7 @@
   tasks:
   - name: print names
     ansible.builtin.debug:
-      msg: "Hello {{ item }}"
-    loop:
+      msg: "Hello {{ item }}" # item is the reserved word we use it as default keyword for calling variables in loop.
+    loop:                     # In loops "loop" is the keyword
     - Dharanidhar
     - Swetha
