@@ -1,0 +1,14 @@
+- name: variables from prompt
+  hosts: localhost
+  connections: local
+  vars_prompt:
+  - name: username #this username will act as the variable here what ever given input will store in it.
+    prompt: Enter the username?
+    private: false #This means what ever we enter it will display
+  - name: password
+    promt: Enter the password;
+    private: true #It will hide what ever we enter.
+  tasks:
+  - name: print credentials
+    ansible.builtin.debug:
+      msg: "Username is: {{ username }}, Password is: {{ password }}" # while refering we need to give like this.
