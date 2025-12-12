@@ -5,3 +5,6 @@
   - name: print course info
     ansible.builtin.debug:
       msg: "course : {{ course }}, Duration: {{ duration }}, tuitor is : {{ tuitor }}"
+
+      #Here we are maintaining variables in the inventory file.
+      
