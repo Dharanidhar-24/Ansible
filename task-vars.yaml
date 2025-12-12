@@ -1,0 +1,17 @@
+- name: play level variables
+  hosts: localhost
+  conection: local
+  vars:
+   course: Devops with AWS
+   duration: 4hrs
+   tuitor: Dharanidhar
+  tasks:
+  - name: task level variables
+    vars:
+      course: Ansible
+    ansible.builtin.debug:
+      msg: "Course: {{ course }}, Duration: {{ duration }}, Tuitor is: {{ tuitor }}"
+
+      #here the variable which we given in task level it will override the play level variable
+      #primary preference will be given to task level variables.
+      #we can assign variables at task level also
