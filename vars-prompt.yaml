@@ -12,3 +12,19 @@
   - name: print credentials
     ansible.builtin.debug:
       msg: "Username is: {{ username }}, Password is: {{ password }}" # while refering we need to give like this.
+
+#       Enter the username?: Dharanidhar
+# Enter the password;:
+
+# PLAY [variables from prompt] ********************************************************************************************
+
+# TASK [Gathering Facts] **************************************************************************************************
+# ok: [localhost]
+
+# TASK [print credentials] ************************************************************************************************
+# ok: [localhost] => {
+#     "msg": "Username is: Dharanidhar, Password is: hii"
+# }
+
+# PLAY RECAP **************************************************************************************************************
+# localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
