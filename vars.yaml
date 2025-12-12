@@ -9,3 +9,5 @@
   - name: print the course info
     ansible.builtin.debug:
       msg: "Course: {{ course }}, Duration: {{ duration }}, Trainer is: {{ trainer }}"  
+
+      #These are all play level variables because we assigned at the play level.
