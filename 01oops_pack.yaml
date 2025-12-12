@@ -1,0 +1,13 @@
+- name: install packages without loops
+  hosts: localhost
+  connection: local
+  become: yes
+
+  tasks:
+    - name: install multiple packages
+      ansible.builtin.package:
+        name:
+          - nginx
+          - mysql-server
+          - zip
+        state: latest
