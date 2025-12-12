@@ -7,3 +7,7 @@
   - name: calling variables from file
     ansible.builtin.debug:
       msg: "Course name: {{ course }},Duration is: {{ duration }}, Tuitor is {{ tuitor }}"
+
+      #Here we can define variables in one seperate yaml file and get it from there.
+      #we should use vars_files as the keyword to call variables from file.
+      #instead of opening code file we can assign variable from other yaml file.
