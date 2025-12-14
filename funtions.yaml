@@ -2,7 +2,16 @@
   hosts: localhost
   connection: local
   become: yes
+  vars:
+    technologies: Devops, AWS, Linux, Ansible # It is string
   tasks:
   - name: default variable
     ansible.builtin.debug:
-      msg: "Hello, {{ name | default('Dharanidhar') }}"
+      msg: "Hello, {{ name | default('Dharanidhar') }}" 
+      # Here we didnot define any variable but we are calling it. if we assign any variable it will take it
+      # Otherwise it will pick it from default function in this case we didn't assign variable it is taking from default.
+ 
+ # Convert string to lists
+  - name: convert string to lists
+    ansible.builtin.debug:
+      msg: "Technologies are {{ technologies }}"
