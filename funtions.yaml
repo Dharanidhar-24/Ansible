@@ -23,7 +23,7 @@
  
  # Convert string to lists
   - name: convert string to lists
-    ansible.builtin.debug:
+    ansible.builtin.debug:                           
       msg: "Technologies are {{ technologies | split(',') }}" 
       #"msg": "Technologies are Devops, AWS, Linux, Ansible" if we didn't use any functions/filters.
       #"msg": "Technologies are ['Devops', ' AWS', ' Linux', ' Ansible']" After applying split filter it became string to lists.
@@ -38,5 +38,5 @@
   # Convert lists into Maps/Dictnoary
   - name: convert lists into Maps
     ansible.builtin.debug:
-     msg: "Maps are {{ listtags }}"
-  
+     msg: "Maps are {{ listtags | items2dict }}"
+     #"msg": "Maps are [{'key': 'Dharanidhar', 'Value': 'Payment'}, {'key': 'Environment', 'Value': 'Dev'}]"   ==> Before

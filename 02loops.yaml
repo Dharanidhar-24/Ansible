@@ -32,7 +32,7 @@
 #     - name: install zip
 #       ansible.builtin.package:
 #         name: zip
-#         state: latest
+#         state: latest 
 
 
 # 2. state (string)
