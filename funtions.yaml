@@ -25,4 +25,5 @@
   # Convert Maps to lists
   - name: convert maps/Dictnoary to lists
     ansible.builtin.debug:
-      msg: "Tags are: {{ tags }}"
+      msg: "Tags are: {{ tags | dict2items }}"
+      #"msg": "Tags are: {'Application': 'Payment', 'Environment': 'Dev'}"
