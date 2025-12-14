@@ -59,7 +59,7 @@
 # If you do not pass these arguments, or do not pass the correct values for your list, you will see KeyError: key or KeyError: my_typo
 
   - name: read yaml and take it to variable
-    ansible.builtin.set_fact:
+    ansible.builtin.set_fact:      # it is used to store data into variable dynamically
       student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}" #lookup is used to read the file
 
   - name: convert yaml to json
@@ -85,3 +85,17 @@
     ansible.builtin.debug:
       msg: "IPADDRESS: {{ ipaddr | ansible.utils.ipv4 }}"
       #"msg": "IPADDRESS: False" if we give wrong ip address
+      #"msg": "IPADDRESS: 192.168.0.1"
+      # here we need to install dependencies "netaddr"
+      #check ansible version "ansible --version"
+      # pip3.9 install netaddr (ansible is developed by python. Its dependencies can be download by pip and 3.9 is the version)
+  
+  - name: grep for root
+  #ansible.builtin.command: cat /etc/passwd | grep root
+    ansible.builtin.shell: cat /etc/passwd | grep root
+    register: command_output
+
+  - name: print the command_output
+    ansible.builtin.debug:
+      msg: "{{ command_output }}"
+      
