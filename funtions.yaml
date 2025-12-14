@@ -4,6 +4,10 @@
   become: yes
   vars:
     technologies: Devops, AWS, Linux, Ansible # It is string
+    # Dictnoary/Maps
+    tags:
+      Application: Payment
+      Environment: Dev
   tasks:
   - name: default variable
     ansible.builtin.debug:
@@ -14,4 +18,11 @@
  # Convert string to lists
   - name: convert string to lists
     ansible.builtin.debug:
-      msg: "Technologies are {{ technologies | split(',') }}" #"msg": "Technologies are Devops, AWS, Linux, Ansible" if we didn't use any functions/filters.
+      msg: "Technologies are {{ technologies | split(',') }}" 
+      #"msg": "Technologies are Devops, AWS, Linux, Ansible" if we didn't use any functions/filters.
+      #"msg": "Technologies are ['Devops', ' AWS', ' Linux', ' Ansible']" After applying split filter it became string to lists.
+
+  # Convert Maps to lists
+  - name: convert maps/Dictnoary to lists
+    ansible.builtin.debug:
+      msg: "Tags are: {{ tags }}"
