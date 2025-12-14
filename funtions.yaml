@@ -91,11 +91,23 @@
       # pip3.9 install netaddr (ansible is developed by python. Its dependencies can be download by pip and 3.9 is the version)
   
   - name: grep for root
-  #ansible.builtin.command: cat /etc/passwd | grep root
+  #ansible.builtin.command: cat /etc/passwd | grep root  ==> by using command we cannot execute complex commands
     ansible.builtin.shell: cat /etc/passwd | grep root
-    register: command_output
+    register: command_output #Here register is the keyword it will store the the output in variable
+
+# command -> a simple command no need of access to shell environment like variables, bash, piping, etc..
+# shell Module -> can access variabless, pipes, redirections, shell environment, etc.
 
   - name: print the command_output
     ansible.builtin.debug:
-      msg: "{{ command_output }}"
-      
+      msg: "{{ command_output }}" #Here we are printing the variable
+
+  - name: redirect the output
+    ansible.builtin.command: ls -ltr > /tmp/output.txt
+    register: output
+
+  - name: print redirect output
+    ansible.builtin.debug:
+      msg: "{{ output }}"
+
+
