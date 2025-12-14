@@ -14,4 +14,4 @@
  # Convert string to lists
   - name: convert string to lists
     ansible.builtin.debug:
-      msg: "Technologies are {{ technologies }}"
+      msg: "Technologies are {{ technologies | split(',') }}" #"msg": "Technologies are Devops, AWS, Linux, Ansible" if we didn't use any functions/filters.
