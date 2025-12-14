@@ -40,3 +40,19 @@
     ansible.builtin.debug:
       msg: "Maps are {{ listtags | items2dict }}"
      #"msg": "Maps are [{'key': 'Dharanidhar', 'Value': 'Payment'}, {'key': 'Environment', 'Value': 'Dev'}]"   ==> Before
+     #"msg": "Maps are {'Dharanidhar': 'Payment', 'Environment': 'Dev'}".  ==> After
+
+
+# fruits:
+#   - fruit: apple
+#     color: red
+#   - fruit: pear
+#     color: yellow
+#   - fruit: grapefruit
+#     color: yellow
+# In this example, you must pass the key_name and value_name arguments to configure the transformation. For example:
+
+# {{ fruits | items2dict(key_name='fruit', value_name='color') }}
+# If you do not pass these arguments, or do not pass the correct values for your list, you will see KeyError: key or KeyError: my_typo
+
+  - name: 
