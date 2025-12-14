@@ -55,4 +55,10 @@
 # {{ fruits | items2dict(key_name='fruit', value_name='color') }}
 # If you do not pass these arguments, or do not pass the correct values for your list, you will see KeyError: key or KeyError: my_typo
 
-  - name: 
+  - name: read yaml and take it to variable
+    ansible.builtin.set_fact:
+      student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}" #lookup is used to read the file
+
+  - name: convert yaml to json
+    ansible.builtin.debug:
+      msg: "To json {{ student_yaml | to_json }}"
