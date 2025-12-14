@@ -11,9 +11,9 @@
     # Lists
     listtags:
       - key: Dharanidhar
-        Value: Payment
+        value: Payment
       - key: Environment
-        Value: Dev
+        value: Dev
   tasks:
   - name: default variable
     ansible.builtin.debug:
