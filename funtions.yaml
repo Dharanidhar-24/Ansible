@@ -6,7 +6,7 @@
     technologies: Devops, AWS, Linux, Ansible # It is string
     name: Dharanidhar
     gmail: Dhar@GMAIL.COM
-    ipaddr: 1212.1212.1212.1212
+    ipaddr: 192.168.0.1
     # Dictnoary/Maps
     tags:
       Application: Payment
@@ -84,3 +84,4 @@
   - name: Check ipaddr is valid or not
     ansible.builtin.debug:
       msg: "IPADDRESS: {{ ipaddr | ansible.utils.ipv4 }}"
+      #"msg": "IPADDRESS: False" if we give wrong ip address
