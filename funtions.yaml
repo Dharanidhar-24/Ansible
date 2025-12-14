@@ -38,5 +38,5 @@
   # Convert lists into Maps/Dictnoary
   - name: convert lists into Maps
     ansible.builtin.debug:
-     msg: "Maps are {{ listtags | items2dict }}"
+      msg: "Maps are {{ listtags | items2dict }}"
      #"msg": "Maps are [{'key': 'Dharanidhar', 'Value': 'Payment'}, {'key': 'Environment', 'Value': 'Dev'}]"   ==> Before
