@@ -8,6 +8,12 @@
     tags:
       Application: Payment
       Environment: Dev
+    # Lists
+    listtags:
+      - key: Application
+        Value: Payment
+      - key: Environment
+        Value: Dev
   tasks:
   - name: default variable
     ansible.builtin.debug:
@@ -26,4 +32,11 @@
   - name: convert maps/Dictnoary to lists
     ansible.builtin.debug:
       msg: "Tags are: {{ tags | dict2items }}"
-      #"msg": "Tags are: {'Application': 'Payment', 'Environment': 'Dev'}"
+      #"msg": "Tags are: {'Application': 'Payment', 'Environment': 'Dev'}" ==> Before
+      #"msg": "Tags are: [{'key': 'Application', 'value': 'Payment'}, {'key': 'Environment', 'value': 'Dev'}]" ==> After
+
+  # Convert lists into Maps/Dictnoary
+  - name: convert lists into Maps
+    ansible.builtin.debug:
+     msg: "Maps are {{ listtags }}"
+  
