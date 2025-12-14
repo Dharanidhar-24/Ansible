@@ -10,7 +10,7 @@
       Environment: Dev
     # Lists
     listtags:
-      - key: Application
+      - key: Dharanidhar
         Value: Payment
       - key: Environment
         Value: Dev
